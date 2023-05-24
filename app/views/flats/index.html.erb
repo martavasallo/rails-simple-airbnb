@@ -1,0 +1,21 @@
+
+<div class="container row mt-5 justify-content-center">
+  <h1 class="text-center">Flat List</h1>
+  <% @flats.each do |flat| %>
+  <%= link_to flat_path(flat), class: "card m-2", style: "width: 18rem; margin: 0; text-decoration: none; color: #303030" do %>
+    <div class="card-body">
+      <h5 class="card-title"><%= flat.name %></h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary"><%= flat.address %></h6>
+      <hr>
+      <p class="card-text" style="
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;"
+      ><%= flat.description %></p>
+      <p class="card-text">£<%= flat.price_per_night %>/night</p>
+      <p class="card-text"><%= flat.number_of_guests %> People</p>
+    </div>
+  <% end %>
+  <% end %>
+</div>
